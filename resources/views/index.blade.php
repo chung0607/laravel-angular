@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="stock">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +26,8 @@
         {{ config('app.name', 'Stock') }}
     </a>
     @{{hello}}
+
+    <company></company>
 
 
     <form id="logout-form" action="@{{ url('/logout') }}" method="POST" style="display: none;">

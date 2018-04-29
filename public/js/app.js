@@ -13677,7 +13677,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-module.exports = __webpack_require__(40);
+module.exports = __webpack_require__(41);
 
 
 /***/ }),
@@ -13695,32 +13695,14 @@ __webpack_require__(12);
 __webpack_require__(36);
 __webpack_require__(38);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue'));
-//
-// const app = new Vue({
-//     el: '#app'
-// });
-//
-//
-angular.module('stock', ['ngResource']).config(['$resourceProvider', function ($resourceProvider) {
+angular.module('app', ['ngResource']).config(['$resourceProvider', function ($resourceProvider) {
   $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
 //
-__webpack_require__(45);
-// require('./angular/controllers/product.js');
-// require('./angular/controllers/user.js');
-// require('./angular/controllers/cart.js');
-//
-// require('./angular/resources/product.js');
-// require('./angular/resources/user.js');
-// require('./angular/resources/cartItem.js');
+__webpack_require__(48);
+
+__webpack_require__(51);
 
 /***/ }),
 /* 12 */
@@ -71698,20 +71680,23 @@ angular.module('ngResource', ['ng']).
 
 
 /***/ }),
-/* 40 */
+/* 40 */,
+/* 41 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 41 */,
 /* 42 */,
 /* 43 */,
 /* 44 */,
-/* 45 */
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
 /***/ (function(module, exports) {
 
-angular.module('stock').controller('IndexController', function ($scope) {
+angular.module('app').controller('IndexController', function ($scope) {
 
   $scope.hello = 'world';
 
@@ -71719,6 +71704,46 @@ angular.module('stock').controller('IndexController', function ($scope) {
     console.log('init');
   };
 });
+
+/***/ }),
+/* 49 */,
+/* 50 */,
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+angular.module('app').component('company', {
+  template: __webpack_require__(52),
+  bindings: {},
+  controller: function () {
+    function CompanyListComponent() {
+      'ngInject';
+
+      _classCallCheck(this, CompanyListComponent);
+    }
+
+    _createClass(CompanyListComponent, [{
+      key: '$onChanges',
+      value: function $onChanges(changes) {
+        if (changes) {}
+      }
+    }]);
+
+    return CompanyListComponent;
+  }()
+});
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+module.exports = "<div>hello world</div>";
 
 /***/ })
 /******/ ]);

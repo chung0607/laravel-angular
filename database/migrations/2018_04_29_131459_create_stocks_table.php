@@ -15,6 +15,10 @@ class CreateStocksTable extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('company_id');
+            $table->integer('market_id');
+            $table->enum('type', ['preferred', 'common']);
+            $table->decimal('price', 8, 2);
             $table->timestamps();
         });
     }

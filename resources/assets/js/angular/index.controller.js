@@ -1,4 +1,4 @@
-angular.module('stock').controller('IndexController', function($scope) {
+angular.module('app').controller('IndexController', function($scope) {
 
   $scope.hello = 'world';
 
