@@ -1,3 +1,5 @@
+# Stock Manager
+
 ## Design
 - Everything are fitted into one single page for simplicity
 - Company stock overview and highest market prices are combined together due to their similarity. Toggle the switch to change between the views.
