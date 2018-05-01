@@ -1,9 +1,5 @@
 # Stock Manager
 
-## Design
-- Everything are fitted into one single page for simplicity
-- Company stock overview and highest market prices are combined together due to their similarity. Toggle the switch to change between the views.
-
 ## Server requirement
 - PHP >= 7.1.3 (Laravel 5.6)
 
@@ -15,6 +11,11 @@
 ## Run
  1. Start the server `php artisan serve`
  2. Open with browser `http://localhost:8000/`
+
+## Design
+- Everything are fitted into one single page for simplicity
+- Company stock overview and highest market prices are combined together due to their similarity. Toggle the switch to change between the views.
+
 
 ## Assumptions
 - Company names are unique

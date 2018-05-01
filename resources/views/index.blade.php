@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Stock') }}</title>
+    <title>Stock Manager</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -22,9 +22,7 @@
 </head>
 <body>
 <div class="container" ng-controller="IndexController" ng-init="init('')">
-    <a class="navbar-brand" href="@{{ url('/') }}">
-        {{ config('app.name', 'Stock') }}
-    </a>
+    <h1 class="title">Stock Manager</h1>
 
     <company-list companies="companies" callback="loadCompanies()"></company-list>
 
