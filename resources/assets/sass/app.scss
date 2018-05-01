@@ -12,3 +12,56 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section-market {
+  margin-bottom: 10px;
+}
+
+// Override bootstrap style
+table {
+  background-color: #ffffff !important;
+  border: 1px solid #dee2e6;
+
+  thead {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.stock-card {
+
+  margin: 10px 0;
+
+  .title {
+    color: #ffffff;
+    border-radius: 5px 5px 0 0;
+    padding: 10px 15px;
+  }
+
+  .title-preferred {
+    background-color: #135fa6;
+  }
+
+  .title-common {
+    background-color: #fa7025;
+  }
+
+  .stocks {
+    border: 1px solid #dee2e6;
+    border-radius: 0 0 5px 5px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+
+    .stock-row {
+      padding: 5px 0;
+    }
+    .stock-row:not(:last-child) {
+      border-bottom: 1px solid #dee2e6;
+    }
+  }
+
+}

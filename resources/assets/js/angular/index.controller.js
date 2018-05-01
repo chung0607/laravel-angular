@@ -1,9 +1,33 @@
-angular.module('app').controller('IndexController', function($scope) {
+angular.module('app').controller('IndexController', function($scope, marketService, companyService, stockService) {
 
-  $scope.hello = 'world';
+  $scope.companies = [];
+  $scope.markets = [];
+  $scope.stocks = [];
 
   $scope.init = function() {
-    console.log('init');
+
+    $scope.loadStocks();
+    $scope.loadCompanies();
+    $scope.loadMarkets();
+
+  }
+
+  $scope.loadCompanies = function() {
+    companyService.resource.query(function(companies) {
+      $scope.companies = companies
+    });
+  }
+
+  $scope.loadMarkets = function() {
+    marketService.resource.query(function(markets) {
+      $scope.markets = markets;
+    });
+  }
+
+  $scope.loadStocks = function() {
+    stockService.resource.query(function(stocks) {
+      $scope.stocks = stocks;
+    });
   }
 
 });

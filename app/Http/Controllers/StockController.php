@@ -14,7 +14,11 @@ class StockController extends Controller
      */
     public function index()
     {
-        return Stock::all();
+        return Stock::with(['market', 'company'])
+            ->orderBy('company_id')
+            ->orderBy('market_id')
+            ->orderBy('type')
+            ->get();
     }
 
     /**
@@ -36,6 +40,10 @@ class StockController extends Controller
     public function store(Request $request)
     {
         $stock = new Stock;
+        $stock->company_id = $request->input('company');
+        $stock->market_id = $request->input('market');
+        $stock->type = $request->input('type');
+        $stock->price = $request->input('price');
         $stock->save();
     }
 

@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stock extends Model
 {
-    //
+
+    public function company() {
+        return $this->belongsTo('App\Company');
+    }
+
+    public function market() {
+        return $this->belongsTo('App\Market');
+    }
+
 }

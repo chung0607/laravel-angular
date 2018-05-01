@@ -1,0 +1,21 @@
+<div class="section">
+    <div class="section">
+        <h3>Company Stock Overview</h3>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-primary active" ng-click="$ctrl.isHighestOnly = true">
+                <input type="radio" checked> Highest Market
+            </label>
+            <label class="btn btn-primary" ng-click="$ctrl.isHighestOnly = false">
+                <input type="radio"> All Markets
+            </label>
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col-6 col-md-4 section-market" ng-repeat="groupedStocks in $ctrl.groupedStocks">
+        <stock-company company="groupedStocks.company" type="groupedStocks.type"
+                       stocks="groupedStocks.stocks" is-highest-only="$ctrl.isHighestOnly"></stock-company>
+    </div>
+    </div>
+
+</div>

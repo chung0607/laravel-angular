@@ -17,6 +17,18 @@ angular.module('app', [
   }]);
 
 //
+require('./angular/util/date.filter.js');
+
 require('./angular/index.controller.js');
 
 require('./angular/company/list/list.component.js');
+require('./angular/company/create/create.component.js');
+require('./angular/company/company.service.js');
+
+require('./angular/stock/list/list.component.js');
+require('./angular/stock/create/create.component.js');
+require('./angular/stock/stock.service.js');
+require('./angular/stock/list/company/company.component.js');
+
+require('./angular/market/list/list.component.js');
+require('./angular/market/market.service.js');

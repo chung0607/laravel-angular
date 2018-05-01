@@ -1,18 +1,31 @@
 'use strict';
 
-angular.module('app').component('company', {
+angular.module('app').component('companyList', {
   template: require('./list.template.html'),
-  bindings: {},
+  bindings: {
+    callback: '&',
+    companies: '<',
+  },
   controller: class CompanyListComponent {
 
     constructor() {
       'ngInject';
+
+      this.showForm = false;
     }
 
+    $onInit() {
+    }
 
-    $onChanges(changes) {
-      if (changes) {
+    createCompany(company) {
+      if (company) {
+        this.callback();
       }
+      this.showForm = false;
+    }
+
+    toggleForm() {
+      this.showForm = !this.showForm;
     }
 
   },

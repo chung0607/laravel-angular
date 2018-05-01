@@ -25,14 +25,12 @@
     <a class="navbar-brand" href="@{{ url('/') }}">
         {{ config('app.name', 'Stock') }}
     </a>
-    @{{hello}}
 
-    <company></company>
+    <company-list companies="companies" callback="loadCompanies()"></company-list>
 
+    <market-list markets="markets" stocks="stocks" companies="companies" callback="loadStocks()"></market-list>
 
-    <form id="logout-form" action="@{{ url('/logout') }}" method="POST" style="display: none;">
-        {{ csrf_field() }}
-    </form>
+    <stock-list stocks="stocks"></stock-list>
 </div>
 
 <!-- Scripts -->

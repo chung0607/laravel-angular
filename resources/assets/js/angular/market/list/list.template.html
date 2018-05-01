@@ -1,0 +1,34 @@
+<div class="section">
+    <div>
+        <h3>Market Stock Overview</h3>
+    </div>
+    <div class="section-market" ng-repeat="market in $ctrl.markets">
+        <h5>{{market.name}}</h5>
+        <h7 ng-show="!$ctrl.stocksByMarket[market.id].length">No stocks are added in this market yet.</h7>
+        <table class="table table-condensed" ng-show="$ctrl.stocksByMarket[market.id].length">
+            <thead class="">
+                <tr>
+                    <th>Company Name</th>
+                    <th>Stock Type</th>
+                    <th>Price entered date</th>
+                    <th>Price entered time</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="stock in $ctrl.stocksByMarket[market.id]">
+                    <td>{{stock.company.name}}</td>
+                    <td>{{stock.type | stockTypeToString}}</td>
+                    <td>{{stock.created_at | dateToISO | date: 'd.M.yyyy' : '+0800'}}</td>
+                    <td>{{stock.created_at | dateToISO | date: 'HH:mm' : '+0800'}}</td>
+                    <td>${{stock.price | number:2}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <button ng-click="$ctrl.toggleForm()" ng-show="!$ctrl.showForm" class="btn btn-primary">Add Stock</button>
+
+    <stock-create markets="$ctrl.markets" companies="$ctrl.companies" ng-show="$ctrl.showForm" callback="$ctrl.createStock(stock)"></stock-create>
+</div>

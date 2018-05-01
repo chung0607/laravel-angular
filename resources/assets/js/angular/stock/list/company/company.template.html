@@ -1,0 +1,17 @@
+<div class="stock-card">
+    <div class="title" ng-class="$ctrl.type=='preferred' ? 'title-preferred' : 'title-common'">
+        <h4>{{$ctrl.company}}</h4>
+        <h6>{{$ctrl.type | stockTypeToString}}</h6>
+    </div>
+    <div class="stocks">
+        <div class="stock-row" ng-if="!$ctrl.isHighestOnly" ng-repeat="stock in $ctrl.stocks">
+            <span>{{stock.market.name}}</span>
+            <span class="float-right">${{stock.price | number:2}}</span>
+        </div>
+
+        <div class="stock-row" ng-if="$ctrl.isHighestOnly">
+            <span>{{$ctrl.highestStock.market.name}}</span>
+            <span class="float-right">${{$ctrl.highestStock.price | number:2}}</span>
+        </div>
+    </div>
+</div>

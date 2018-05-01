@@ -1,1 +1,17 @@
-<div>hello world</div>
+<div class="section">
+    <div>
+        <h3>Company Profiles</h3>
+    </div>
+    <table class="table table-striped table-bordered table-condensed">
+        <tbody>
+            <tr ng-repeat="company in $ctrl.companies">
+                <td>{{company.name}}</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    <button ng-click="$ctrl.toggleForm()" ng-show="!$ctrl.showForm" class="btn btn-primary">Add company profile</button>
+
+    <company-create ng-show="$ctrl.showForm" callback="$ctrl.createCompany(company)"></company-create>
+</div>
