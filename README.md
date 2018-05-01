@@ -5,6 +5,7 @@
 
 ## Set it up
 1. Clone this repo
+2. Copy `.env.example` to `.env`. Set the database user and password
 2. Run `npm install`
 3. Prepare database and seed data `php artisan migrate:refresh --seed`
 
